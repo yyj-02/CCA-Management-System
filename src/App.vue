@@ -1,37 +1,24 @@
 <template>
   <v-app>
-    <v-navigation-drawer
-      absolute
-      permanent
-      left
-    >
+    <!-- <v-navigation-drawer absolute permanent left>
       <v-list>
-        <v-list-item-content 
-          class="d-flex justify-center"
-        >
+        <v-list-item-content class="d-flex justify-center">
           <v-card
             class="rounded-lg primary mx-2"
             elevation="2"
-            max-width=90%
+            max-width="90%"
             tile
           >
             <v-card-title class="white--text">{{ hallName }}</v-card-title>
-            <v-card-subtitle class="white--text">{{ user.name }} - {{ user.roomNumber }}</v-card-subtitle>
+            <v-card-subtitle class="white--text">
+              {{ user.name }} - {{ user.roomNumber }}
+            </v-card-subtitle>
           </v-card>
         </v-list-item-content>
       </v-list>
-      <v-list
-        nav
-        dense
-      >
-        <v-list-item-group
-          v-model="selectedItem"
-          color="primary"
-        >
-          <v-list-item
-            v-for="(navItem, i) in navItems"
-            :key="i"
-          >
+      <v-list nav dense>
+        <v-list-item-group v-model="selectedItem" color="primary">
+          <v-list-item v-for="(navItem, i) in navItems" :key="i">
             <v-list-item-content>
               <v-list-item-title v-text="navItem"></v-list-item-title>
             </v-list-item-content>
@@ -41,14 +28,22 @@
     </v-navigation-drawer>
     <v-main>
       <router-view />
-    </v-main>
+    </v-main> -->
+    <AttendanceTaking
+      :membersAttendance="membersAttendance"
+      v-on:toggle-attendance="toggleAttendance"
+    />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import AttendanceTaking from "./components/AttendanceTaking.vue";
 
 export default Vue.extend({
+  components: {
+    AttendanceTaking,
+  },
   data: () => {
     return {
       navItems: ["Volleyball ExCo", "My CCAs"],
@@ -56,8 +51,19 @@ export default Vue.extend({
       user: {
         name: "Yeoh Yong Jie",
         roomNumber: "A114",
-      }
+      },
+      membersAttendance: [
+        { name: "Yeoh Yong Jie", attended: true },
+        { name: "Yuvaraj Kumaresan", attended: false },
+        { name: "Encik Jackie", attended: false },
+      ],
     };
+  },
+  methods: {
+    toggleAttendance: function (payload: number) {
+      this.membersAttendance[payload].attended =
+        !this.membersAttendance[payload].attended;
+    },
   },
 });
 </script>
