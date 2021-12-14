@@ -29,18 +29,18 @@
     <!--     <v-main>
       <router-view />
     </v-main> -->
-    -->
-    <ViewPastAttendance />
+    
+    <Header />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import ViewPastAttendance from "./components/ViewPastAttendance.vue";
+import Header from "./components/Header.vue";
 
 export default Vue.extend({
   components: {
-    ViewPastAttendance,
+    Header,
   },
   data: () => {
     return {
