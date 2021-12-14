@@ -1,38 +1,40 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
-
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
-
-      <v-spacer></v-spacer>
-
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
+    <v-navigation-drawer>
+      <v-list>
+        <v-list-item-content 
+          class="d-flex justify-center"
+        >
+          <v-card
+            class="rounded-lg purple mx-2"
+            elevation="2"
+            max-width=90%
+            tile
+          >
+            <v-card-title class="white--text">{{ hallName }}</v-card-title>
+            <v-card-subtitle class="white--text">{{ user.name }} - {{ user.roomNumber }}</v-card-subtitle>
+          </v-card>
+        </v-list-item-content>
+      </v-list>
+      <v-list
+        nav
+        dense
       >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
-    </v-app-bar>
-
+        <v-list-item-group
+          v-model="selectedItem"
+          color="primary"
+        >
+          <v-list-item
+            v-for="(navItem, i) in navItems"
+            :key="i"
+          >
+            <v-list-item-content>
+              <v-list-item-title v-text="navItem"></v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-item-group>
+      </v-list>
+    </v-navigation-drawer>
     <v-main>
       <router-view />
     </v-main>
@@ -43,10 +45,15 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "App",
-
-  data: () => ({
-    //
-  }),
+  data: () => {
+    return {
+      navItems: ["Volleyball ExCo", "My CCAs"],
+      hallName: "Eusoff Hall",
+      user: {
+        name: "Yeoh Yong Jie",
+        roomNumber: "A114",
+      }
+    };
+  },
 });
 </script>
