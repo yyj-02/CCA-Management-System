@@ -40,18 +40,18 @@
       </v-list>
     </v-navigation-drawer> -->
     <v-main>
-      <DaysToEvent />
+      <TrainingTimes />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import DaysToEvent from "./components/DaysToEvent.vue";
+import TrainingTimes from "./components/TrainingTimes.vue";
 
 export default Vue.extend({
   components: {
-    DaysToEvent,
+    TrainingTimes,
   },
   data: () => {
     return {

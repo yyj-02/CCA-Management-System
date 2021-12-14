@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card id="grad" class="rounded-xl" elevation="2" height="200%" width="100%">
+    <v-card id="grad" class="rounded-xl" elevation="2" height="100%" width="100%">
       <v-card-title class="justify-center headline white--text font-weight-medium"> Days To {{ eventDetails.eventName }} </v-card-title>
       <v-card-text class="font-weight-black white--text text-center display-4">
         {{ eventDetails. daysToEvent }}
@@ -16,8 +16,8 @@ export default Vue.extend({
     eventDetails: {
       default: {
         eventName: "IHG",
-        daysToEvent: 6
-      }
+        daysToEvent: 6,
+      },
     },
   },
 })
