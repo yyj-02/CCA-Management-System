@@ -4,6 +4,9 @@
       <v-card-title class="headline font-weight-medium">
         Attendance Taking
       </v-card-title>
+      <v-card-subtitle>
+        Sem {{ attendanceWeek.sem }} Week {{ attendanceWeek.week }}
+      </v-card-subtitle>
       <v-card-text>
         <v-list>
           <v-list-item

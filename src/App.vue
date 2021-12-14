@@ -26,11 +26,18 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer> -->
-    <v-main>
+    <!--     <v-main>
       <router-view />
     </v-main> -->
+    <PlayersCut
+      :currentPlayers="currentPlayers"
+      v-on:toggle-cut="toggleCut"
+      v-on:clear-cut="clearCut"
+      v-on:submit-cut="submitCut"
+    />
     <AttendanceTaking
       :membersAttendance="membersAttendance"
+      :attendanceWeek="attendanceWeek"
       v-on:toggle-attendance="toggleAttendance"
     />
   </v-app>
@@ -38,10 +45,12 @@
 
 <script lang="ts">
 import Vue from "vue";
+import PlayersCut from "./components/PlayersCut.vue";
 import AttendanceTaking from "./components/AttendanceTaking.vue";
 
 export default Vue.extend({
   components: {
+    PlayersCut,
     AttendanceTaking,
   },
   data: () => {
@@ -57,12 +66,34 @@ export default Vue.extend({
         { name: "Yuvaraj Kumaresan", attended: false },
         { name: "Encik Jackie", attended: false },
       ],
+      attendanceWeek: {
+        sem: 1,
+        week: 5,
+      },
+      currentPlayers: [
+        { name: "Yeoh Yong Jie", cut: false },
+        { name: "John Doe", cut: true },
+        { name: "Yuvaraj Kumaresan", cut: false },
+      ],
     };
   },
   methods: {
     toggleAttendance: function (payload: number) {
       this.membersAttendance[payload].attended =
         !this.membersAttendance[payload].attended;
+    },
+    toggleCut: function (payload: number) {
+      this.currentPlayers[payload].cut = !this.currentPlayers[payload].cut;
+    },
+    clearCut: function () {
+      for (var index in this.currentPlayers) {
+        this.currentPlayers[index].cut = false;
+      }
+    },
+    submitCut: function () {
+      this.currentPlayers = this.currentPlayers.filter(
+        (currentPlayer) => !currentPlayer.cut
+      );
     },
   },
 });
