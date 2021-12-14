@@ -1,12 +1,16 @@
 <template>
   <v-app>
-    <v-navigation-drawer>
+    <v-navigation-drawer
+      absolute
+      permanent
+      left
+    >
       <v-list>
         <v-list-item-content 
           class="d-flex justify-center"
         >
           <v-card
-            class="rounded-lg purple mx-2"
+            class="rounded-lg primary mx-2"
             elevation="2"
             max-width=90%
             tile
