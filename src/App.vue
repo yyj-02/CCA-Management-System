@@ -29,29 +29,18 @@
     <!--     <v-main>
       <router-view />
     </v-main> -->
-    <PlayersCut
-      :currentPlayers="currentPlayers"
-      v-on:toggle-cut="toggleCut"
-      v-on:clear-cut="clearCut"
-      v-on:submit-cut="submitCut"
-    />
-    <AttendanceTaking
-      :membersAttendance="membersAttendance"
-      :attendanceWeek="attendanceWeek"
-      v-on:toggle-attendance="toggleAttendance"
-    />
+
+    <Header />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import PlayersCut from "./components/PlayersCut.vue";
-import AttendanceTaking from "./components/AttendanceTaking.vue";
+import Header from "./components/Header.vue";
 
 export default Vue.extend({
   components: {
-    PlayersCut,
-    AttendanceTaking,
+    Header,
   },
   data: () => {
     return {
