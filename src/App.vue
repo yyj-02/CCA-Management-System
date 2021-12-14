@@ -26,23 +26,21 @@
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer> -->
-    <v-main>
+    <!--     <v-main>
       <router-view />
     </v-main> -->
-    <AttendanceTaking
-      :membersAttendance="membersAttendance"
-      v-on:toggle-attendance="toggleAttendance"
-    />
+    -->
+    <ViewPastAttendance />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import AttendanceTaking from "./components/AttendanceTaking.vue";
+import ViewPastAttendance from "./components/ViewPastAttendance.vue";
 
 export default Vue.extend({
   components: {
-    AttendanceTaking,
+    ViewPastAttendance,
   },
   data: () => {
     return {
