@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-navigation-drawer
+    <!-- <v-navigation-drawer
       absolute
       permanent
       left
@@ -38,17 +38,21 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-    </v-navigation-drawer>
+    </v-navigation-drawer> -->
     <v-main>
-      <router-view />
+      <DaysToEvent />
     </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
+import DaysToEvent from "./components/DaysToEvent.vue";
 
 export default Vue.extend({
+  components: {
+    DaysToEvent,
+  },
   data: () => {
     return {
       navItems: ["Volleyball ExCo", "My CCAs"],
