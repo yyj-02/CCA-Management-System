@@ -1,35 +1,76 @@
 <template>
   <v-app>
-    <v-navigation-drawer v-mode="null" absolute permanent left>
-      <v-list>
-        <v-list-item-content class="d-flex justify-center">
-          <v-card
-            id="grad"
-            class="rounded-xl primary mx-2"
-            elevation="4"
-            max-width="90%"
-            tile
-          >
-            <v-card-title class="white--text">{{ hallName }}</v-card-title>
-            <v-card-subtitle class="white--text">
-              {{ user.name }} - {{ user.roomNumber }}
-            </v-card-subtitle>
-          </v-card>
-        </v-list-item-content>
-      </v-list>
-      <v-list nav rounded>
-        <v-list-item-group v-model="selectedItem" color="deep-purple">
-          <v-list-item v-for="(navItem, i) in navItems" :key="i">
-            <v-list-item-content>
-              <v-list-item-title v-text="navItem"></v-list-item-title>
+    <v-container class="pa-0 d-none d-lg-block">
+      <v-navigation-drawer v-mode="null" fixed permanent left>
+        <v-list>
+          <v-list-item-content class="d-flex justify-center">
+            <v-card
+              class="grad rounded-xl primary mx-2"
+              elevation="4"
+              max-width="90%"
+              tile
+            >
+              <v-card-title class="white--text">{{ hallName }}</v-card-title>
+              <v-card-subtitle class="white--text">
+                {{ user.name }} - {{ user.roomNumber }}
+              </v-card-subtitle>
+            </v-card>
+          </v-list-item-content>
+        </v-list>
+        <v-list nav rounded>
+          <v-list-item-group v-model="selectedItem" color="deep-purple">
+            <v-list-item v-for="(navItem, i) in navItems" :key="i">
+              <v-list-item-content>
+                <v-list-item-title v-text="navItem"></v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </v-list-item-group>
+        </v-list>
+      </v-navigation-drawer>
+      <v-main id="main">
+        <router-view />
+      </v-main>
+    </v-container>
+    <v-container class="d-lg-none">
+      <v-slide-y-transition>
+        <v-navigation-drawer
+          v-show="isVisible"
+          v-click-outside="hideNav"
+          v-mode="null"
+          fixed
+          permanent
+          left
+        >
+          <v-list>
+            <v-list-item-content class="d-flex justify-center">
+              <v-card
+                class="grad rounded-xl primary mx-2"
+                elevation="4"
+                max-width="90%"
+                tile
+              >
+                <v-card-title class="white--text">{{ hallName }}</v-card-title>
+                <v-card-subtitle class="white--text">
+                  {{ user.name }} - {{ user.roomNumber }}
+                </v-card-subtitle>
+              </v-card>
             </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer>
-    <v-main id="main">
-      <router-view />
-    </v-main>
+          </v-list>
+          <v-list nav rounded>
+            <v-list-item-group v-model="selectedItem" color="deep-purple">
+              <v-list-item v-for="(navItem, i) in navItems" :key="i">
+                <v-list-item-content>
+                  <v-list-item-title v-text="navItem"></v-list-item-title>
+                </v-list-item-content>
+              </v-list-item>
+            </v-list-item-group>
+          </v-list>
+        </v-navigation-drawer>
+      </v-slide-y-transition>
+      <v-main>
+        <router-view v-on:toggle-nav="toggleNav" />
+      </v-main>
+    </v-container>
   </v-app>
 </template>
 
@@ -58,13 +99,27 @@ export default Vue.extend({
         { name: "John Doe", cut: true },
         { name: "Yuvaraj Kumaresan", cut: false },
       ],
+      isVisible: false,
     };
+  },
+  methods: {
+    toggleNav: function () {
+      var status = this.isVisible;
+      setTimeout(() => {
+        this.isVisible = !status;
+      }, 50);
+    },
+    hideNav: function () {
+      setTimeout(() => {
+        this.isVisible = false;
+      }, 30);
+    },
   },
 });
 </script>
 
 <style scoped>
-#grad {
+.grad {
   background-image: linear-gradient(to bottom right, #b578ff, #7389fe);
 }
 #main {

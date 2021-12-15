@@ -8,7 +8,7 @@
         Sem {{ attendanceWeek.sem }} Week {{ attendanceWeek.week }}
       </v-card-subtitle>
       <v-card-text>
-        <v-list>
+        <v-list overflow-y-auto>
           <v-list-item
             v-for="(member, index) in membersAttendance"
             :key="index"

@@ -1,55 +1,57 @@
 <template>
   <v-app>
-    <v-container id="splitTitleContent">
-      <v-container id="title" class="pb-0">
-        <v-container class="py-0">
-          <Header :cca="cca" />
+    <v-container class="pa-0 d-none d-lg-block">
+      <v-container id="splitTitleContent">
+        <v-container id="title" class="pb-0">
+          <v-container class="py-0">
+            <Header :cca="cca" />
+          </v-container>
         </v-container>
-      </v-container>
-      <v-container id="content" class="py-0">
-        <v-container id="content-1">
-          <AttendanceTaking
-            :membersAttendance="membersAttendance"
-            :attendanceWeek="attendanceWeek"
-            v-on:toggle-attendance="toggleAttendance"
-          />
-        </v-container>
-        <v-container id="content-2">
-          <ViewPastAttendance :attendances="attendances" />
-        </v-container>
-        <v-container id="content-3">
-          <TrainingTimes :trainingTimes="trainingTimes" />
-        </v-container>
-        <v-container id="content-4">
-          <PlayersCut
-            :currentPlayers="currentPlayers"
-            v-on:toggle-cut="toggleCut"
-            v-on:clear-cut="clearCut"
-            v-on:submit-cut="submitCut"
-          />
-        </v-container>
-        <v-container id="content-5">
-          <DaysToEvent :eventDetails="eventDetails" />
+        <v-container id="content" class="py-0">
+          <v-container id="content-1">
+            <AttendanceTaking
+              :membersAttendance="membersAttendance"
+              :attendanceWeek="attendanceWeek"
+              v-on:toggle-attendance="toggleAttendance"
+            />
+          </v-container>
+          <v-container id="content-2">
+            <ViewPastAttendance :attendances="attendances" />
+          </v-container>
+          <v-container id="content-3">
+            <TrainingTimes :trainingTimes="trainingTimes" />
+          </v-container>
+          <v-container id="content-4">
+            <PlayersCut
+              :currentPlayers="currentPlayers"
+              v-on:toggle-cut="toggleCut"
+              v-on:clear-cut="clearCut"
+              v-on:submit-cut="submitCut"
+            />
+          </v-container>
+          <v-container id="content-5">
+            <DaysToEvent :eventDetails="eventDetails" />
+          </v-container>
         </v-container>
       </v-container>
     </v-container>
-    <!-- 
-        <DaysToEvent :eventDetails="eventDetails" />
-        <AttendanceTaking
-          :membersAttendance="membersAttendance"
-          :attendanceWeek="attendanceWeek"
-          v-on:toggle-attendance="toggleAttendance"
-        />
-        <TrainingTimes :trainingTimes="trainingTimes" />
-        <PlayersCut
-          :currentPlayers="currentPlayers"
-          v-on:toggle-cut="toggleCut"
-          v-on:clear-cut="clearCut"
-          v-on:submit-cut="submitCut"
-        />
-        <ViewPastAttendance :attendances="attendances" />
-
-     -->
+    <v-container class="d-lg-none">
+      <Header :cca="cca" v-on:toggle-nav="toggleNav" />
+      <DaysToEvent :eventDetails="eventDetails" />
+      <AttendanceTaking
+        :membersAttendance="membersAttendance"
+        :attendanceWeek="attendanceWeek"
+        v-on:toggle-attendance="toggleAttendance"
+      />
+      <TrainingTimes :trainingTimes="trainingTimes" />
+      <PlayersCut
+        :currentPlayers="currentPlayers"
+        v-on:toggle-cut="toggleCut"
+        v-on:clear-cut="clearCut"
+        v-on:submit-cut="submitCut"
+      />
+      <ViewPastAttendance :attendances="attendances" />
+    </v-container>
   </v-app>
 </template>
 
@@ -153,6 +155,9 @@ export default Vue.extend({
       this.currentPlayers = this.currentPlayers.filter(
         (currentPlayer) => !currentPlayer.cut
       );
+    },
+    toggleNav: function () {
+      this.$emit("toggle-nav");
     },
   },
 });
