@@ -16,7 +16,7 @@
               {{ currentPlayer.name }}
             </v-list-item>
             <v-list-item
-              class="purple lighten-4"
+              class="purple lighten-5"
               v-else
               :key="index"
               @click="toggleCut(index)"
@@ -30,7 +30,13 @@
             <v-btn block rounded @click="clearCut"> Clear </v-btn>
           </v-col>
           <v-col>
-            <v-btn color="purple lighten-3" block rounded @click="submitCut">
+            <v-btn
+              id="grad"
+              color="white--text"
+              block
+              rounded
+              @click="submitCut"
+            >
               Submit
             </v-btn>
           </v-col>
@@ -65,3 +71,9 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+#grad {
+  background-image: linear-gradient(to bottom right, #b578ff, #7389fe);
+}
+</style>

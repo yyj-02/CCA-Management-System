@@ -1,9 +1,10 @@
 <template>
   <v-app>
-    <!-- <v-navigation-drawer absolute permanent left>
+    <v-navigation-drawer v-mode="null" absolute permanent left>
       <v-list>
         <v-list-item-content class="d-flex justify-center">
           <v-card
+            id="grad"
             class="rounded-lg primary mx-2"
             elevation="2"
             max-width="90%"
@@ -17,7 +18,7 @@
         </v-list-item-content>
       </v-list>
       <v-list nav dense>
-        <v-list-item-group v-model="selectedItem" color="primary">
+        <v-list-item-group v-model="selectedItem" color="purple">
           <v-list-item v-for="(navItem, i) in navItems" :key="i">
             <v-list-item-content>
               <v-list-item-title v-text="navItem"></v-list-item-title>
@@ -25,23 +26,17 @@
           </v-list-item>
         </v-list-item-group>
       </v-list>
-    </v-navigation-drawer> -->
-    <!--     <v-main>
+    </v-navigation-drawer>
+    <v-main id="main">
       <router-view />
-    </v-main> -->
-
-    <Header />
+    </v-main>
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import Header from "./components/Header.vue";
 
 export default Vue.extend({
-  components: {
-    Header,
-  },
   data: () => {
     return {
       navItems: ["Volleyball ExCo", "My CCAs"],
@@ -87,3 +82,14 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+#grad {
+  background-image: linear-gradient(to bottom right, #b578ff, #7389fe);
+}
+#main {
+  width: calc(100% - 256px);
+  position: relative;
+  left: 256px;
+}
+</style>
