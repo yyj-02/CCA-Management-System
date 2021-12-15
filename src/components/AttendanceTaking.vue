@@ -1,9 +1,12 @@
 <template>
   <v-container>
-    <v-card class="rounded-xl" elevation="2" height="100%" width="100%">
+    <v-card class="rounded-xl" elevation="4" height="100%" width="100%">
       <v-card-title class="headline font-weight-medium">
         Attendance Taking
       </v-card-title>
+      <v-card-subtitle>
+        Sem {{ attendanceWeek.sem }} Week {{ attendanceWeek.week }}
+      </v-card-subtitle>
       <v-card-text>
         <v-list>
           <v-list-item

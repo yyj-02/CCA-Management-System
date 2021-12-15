@@ -3,7 +3,7 @@
     <v-card
       id="grad"
       class="rounded-xl"
-      elevation="2"
+      elevation="4"
       height="100%"
       width="100%"
     >
