@@ -5,7 +5,7 @@
         <v-list-item-content class="d-flex justify-center">
           <v-card
             id="grad"
-            class="rounded-lg primary mx-2"
+            class="rounded-xl primary mx-2"
             elevation="4"
             max-width="90%"
             tile
@@ -17,8 +17,8 @@
           </v-card>
         </v-list-item-content>
       </v-list>
-      <v-list nav dense>
-        <v-list-item-group v-model="selectedItem" color="purple">
+      <v-list nav rounded>
+        <v-list-item-group v-model="selectedItem" color="deep-purple">
           <v-list-item v-for="(navItem, i) in navItems" :key="i">
             <v-list-item-content>
               <v-list-item-title v-text="navItem"></v-list-item-title>
@@ -59,25 +59,6 @@ export default Vue.extend({
         { name: "Yuvaraj Kumaresan", cut: false },
       ],
     };
-  },
-  methods: {
-    toggleAttendance: function (payload: number) {
-      this.membersAttendance[payload].attended =
-        !this.membersAttendance[payload].attended;
-    },
-    toggleCut: function (payload: number) {
-      this.currentPlayers[payload].cut = !this.currentPlayers[payload].cut;
-    },
-    clearCut: function () {
-      for (var index in this.currentPlayers) {
-        this.currentPlayers[index].cut = false;
-      }
-    },
-    submitCut: function () {
-      this.currentPlayers = this.currentPlayers.filter(
-        (currentPlayer) => !currentPlayer.cut
-      );
-    },
   },
 });
 </script>

@@ -16,7 +16,7 @@
               {{ currentPlayer.name }}
             </v-list-item>
             <v-list-item
-              class="purple lighten-5"
+              class="deep-purple lighten-5"
               v-else
               :key="index"
               @click="toggleCut(index)"

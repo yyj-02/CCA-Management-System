@@ -1,20 +1,55 @@
 <template>
   <v-app>
-    <Header :cca="cca" />
-    <DaysToEvent :eventDetails="eventDetails" />
-    <AttendanceTaking
-      :membersAttendance="membersAttendance"
-      :attendanceWeek="attendanceWeek"
-      v-on:toggle-attendance="toggleAttendance"
-    />
-    <TrainingTimes :trainingTimes="trainingTimes" />
-    <PlayersCut
-      :currentPlayers="currentPlayers"
-      v-on:toggle-cut="toggleCut"
-      v-on:clear-cut="clearCut"
-      v-on:submit-cut="submitCut"
-    />
-    <ViewPastAttendance :attendances="attendances" />
+    <v-container id="splitTitleContent">
+      <v-container id="title" class="pb-0">
+        <v-container class="py-0">
+          <Header :cca="cca" />
+        </v-container>
+      </v-container>
+      <v-container id="content" class="py-0">
+        <v-container id="content-1">
+          <AttendanceTaking
+            :membersAttendance="membersAttendance"
+            :attendanceWeek="attendanceWeek"
+            v-on:toggle-attendance="toggleAttendance"
+          />
+        </v-container>
+        <v-container id="content-2">
+          <ViewPastAttendance :attendances="attendances" />
+        </v-container>
+        <v-container id="content-3">
+          <TrainingTimes :trainingTimes="trainingTimes" />
+        </v-container>
+        <v-container id="content-4">
+          <PlayersCut
+            :currentPlayers="currentPlayers"
+            v-on:toggle-cut="toggleCut"
+            v-on:clear-cut="clearCut"
+            v-on:submit-cut="submitCut"
+          />
+        </v-container>
+        <v-container id="content-5">
+          <DaysToEvent :eventDetails="eventDetails" />
+        </v-container>
+      </v-container>
+    </v-container>
+    <!-- 
+        <DaysToEvent :eventDetails="eventDetails" />
+        <AttendanceTaking
+          :membersAttendance="membersAttendance"
+          :attendanceWeek="attendanceWeek"
+          v-on:toggle-attendance="toggleAttendance"
+        />
+        <TrainingTimes :trainingTimes="trainingTimes" />
+        <PlayersCut
+          :currentPlayers="currentPlayers"
+          v-on:toggle-cut="toggleCut"
+          v-on:clear-cut="clearCut"
+          v-on:submit-cut="submitCut"
+        />
+        <ViewPastAttendance :attendances="attendances" />
+
+     -->
   </v-app>
 </template>
 
@@ -50,9 +85,11 @@ export default Vue.extend({
         daysToEvent: 6,
       },
       membersAttendance: [
-        { name: "Yeoh Yong Jie", attended: true },
-        { name: "Yuvaraj Kumaresan", attended: false },
-        { name: "Encik Jackie", attended: false },
+        { name: "Yeoh Yong Jie", attended: false },
+        { name: "Tom Holland", attended: true },
+        { name: "Toby Maguire", attended: true },
+        { name: "Andrew Garfield", attended: true },
+        { name: "Wait what?", attended: false },
       ],
       attendanceWeek: {
         sem: 1,
@@ -120,3 +157,39 @@ export default Vue.extend({
   },
 });
 </script>
+
+<style scoped>
+#splitTitleContent {
+  display: grid;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+}
+#title {
+  grid-row: 1 / 2;
+}
+#content {
+  grid-row: 2 / 11;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+#content-1 {
+  grid-column: 1 / 2;
+  grid-row: 1 / 10;
+}
+#content-2 {
+  grid-column: 2 / 4;
+  grid-row: 1 / 9;
+}
+#content-3 {
+  grid-column: 1 / 2;
+  grid-row: 10 / 13;
+}
+#content-4 {
+  grid-column: 2 / 3;
+  grid-row: 9 / 13;
+}
+#content-5 {
+  grid-column: 3 / 4;
+  grid-row: 9 / 13;
+}
+</style>

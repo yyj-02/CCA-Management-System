@@ -1,5 +1,5 @@
 <template>
-  <v-container class="text-h3">
+  <v-container class="text-h3 pb-0">
     {{ cca }}
   </v-container>
 </template>

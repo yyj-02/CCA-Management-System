@@ -35,5 +35,8 @@ export default Vue.extend({
 <style>
 #grad {
   background-image: linear-gradient(to bottom right, #b578ff, #7389fe);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 </style>
