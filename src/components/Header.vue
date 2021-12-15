@@ -1,7 +1,7 @@
 <template>
-  <div class="text-h3">
+  <v-container class="text-h3">
     {{ cca }}
-  </div>
+  </v-container>
 </template>
 
 <script lang="ts">

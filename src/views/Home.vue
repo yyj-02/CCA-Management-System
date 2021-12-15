@@ -1,57 +1,40 @@
 <template>
   <v-app>
-    <!-- <v-navigation-drawer absolute permanent left>
-      <v-list>
-        <v-list-item-content class="d-flex justify-center">
-          <v-card
-            class="rounded-lg primary mx-2"
-            elevation="2"
-            max-width="90%"
-            tile
-          >
-            <v-card-title class="white--text">{{ hallName }}</v-card-title>
-            <v-card-subtitle class="white--text">
-              {{ user.name }} - {{ user.roomNumber }}
-            </v-card-subtitle>
-          </v-card>
-        </v-list-item-content>
-      </v-list>
-      <v-list nav dense>
-        <v-list-item-group v-model="selectedItem" color="primary">
-          <v-list-item v-for="(navItem, i) in navItems" :key="i">
-            <v-list-item-content>
-              <v-list-item-title v-text="navItem"></v-list-item-title>
-            </v-list-item-content>
-          </v-list-item>
-        </v-list-item-group>
-      </v-list>
-    </v-navigation-drawer> -->
-    <!--     <v-main>
-      <router-view />
-    </v-main> -->
+    <Header :cca="cca" />
+    <DaysToEvent :eventDetails="eventDetails" />
+    <AttendanceTaking
+      :membersAttendance="membersAttendance"
+      :attendanceWeek="attendanceWeek"
+      v-on:toggle-attendance="toggleAttendance"
+    />
+    <TrainingTimes :trainingTimes="trainingTimes" />
     <PlayersCut
       :currentPlayers="currentPlayers"
       v-on:toggle-cut="toggleCut"
       v-on:clear-cut="clearCut"
       v-on:submit-cut="submitCut"
     />
-    <AttendanceTaking
-      :membersAttendance="membersAttendance"
-      :attendanceWeek="attendanceWeek"
-      v-on:toggle-attendance="toggleAttendance"
-    />
+    <ViewPastAttendance :attendances="attendances" />
   </v-app>
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import PlayersCut from "../components/PlayersCut.vue";
+import Header from "../components/Header.vue";
+import DaysToEvent from "../components/DaysToEvent.vue";
 import AttendanceTaking from "../components/AttendanceTaking.vue";
+import TrainingTimes from "../components/TrainingTimes.vue";
+import PlayersCut from "../components/PlayersCut.vue";
+import ViewPastAttendance from "../components/ViewPastAttendance.vue";
 
 export default Vue.extend({
   components: {
-    PlayersCut,
+    Header,
+    DaysToEvent,
     AttendanceTaking,
+    TrainingTimes,
+    PlayersCut,
+    ViewPastAttendance,
   },
   data: () => {
     return {
@@ -60,6 +43,11 @@ export default Vue.extend({
       user: {
         name: "Yeoh Yong Jie",
         roomNumber: "A114",
+      },
+      cca: "Volleyball",
+      eventDetails: {
+        eventName: "IHG",
+        daysToEvent: 6,
       },
       membersAttendance: [
         { name: "Yeoh Yong Jie", attended: true },
@@ -70,10 +58,44 @@ export default Vue.extend({
         sem: 1,
         week: 5,
       },
+      trainingTimes: [
+        { day: "Tuesday", startTime: "5pm", endTime: "7pm" },
+        { day: "Wednesday", startTime: "9pm", endTime: "11pm" },
+      ],
       currentPlayers: [
         { name: "Yeoh Yong Jie", cut: false },
         { name: "John Doe", cut: true },
         { name: "Yuvaraj Kumaresan", cut: false },
+      ],
+      attendances: [
+        {
+          name: "Yuvaraj",
+          Week1Attendance: "0",
+          Week2Attendance: "1",
+          Week3Attendance: "0",
+          Week4Attendance: "1",
+        },
+        {
+          name: "Yong Jie",
+          Week1Attendance: "1",
+          Week2Attendance: "0",
+          Week3Attendance: "1",
+          Week4Attendance: "1",
+        },
+        {
+          name: "John Doe",
+          Week1Attendance: "0",
+          Week2Attendance: "0",
+          Week3Attendance: "1",
+          Week4Attendance: "0",
+        },
+        {
+          name: "John Mangoseed",
+          Week1Attendance: "1",
+          Week2Attendance: "1",
+          Week3Attendance: "0",
+          Week4Attendance: "1",
+        },
       ],
     };
   },

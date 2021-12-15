@@ -1,6 +1,6 @@
 <template>
   <v-container>
-    <v-card class="rounded-xl" elevation="2" height="100%" width="100%">
+    <v-card class="rounded-xl" elevation="4" height="100%" width="100%">
       <v-card-title class="headline font-weight-medium">
         View Past Attendance
       </v-card-title>

@@ -6,7 +6,7 @@
           <v-card
             id="grad"
             class="rounded-lg primary mx-2"
-            elevation="2"
+            elevation="4"
             max-width="90%"
             tile
           >
