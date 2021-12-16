@@ -1,11 +1,11 @@
 <a href="https://cca-management-system.web.app/"><p align="center"><img width=20% src="https://github.com/yyj-02/CCA-Management-System/blob/main/src/assets/logo.png" /></p></a>
 <h1 align="center">CCA Manager</h1>
-<h3 align="center">A one stop solution to managing hall life</h3>
+<h3 align="center">A one stop solution for hall life management</h3>
 
 # CCA Manager
 
 <a href="https://cca-management-system.web.app/"><p align="center"><img width=70% src="https://github.com/yyj-02/CCA-Management-System/blob/main/src/assets/ccaManagerUI.png" /></p></a>
-<h3><a href="https://cca-management-system.web.app/">Link to CCA Manager</a></h3>
+<h3 align="center"><a href="https://cca-management-system.web.app/">Link to CCA Manager</a></h3>
 
 ## Project Description
 
@@ -14,10 +14,10 @@ This project was developed by [Yuvaraj](https://github.com/Yuvaraj0702) and [I](
 ## Tech Stack
 
 <p align="center">
-<img style="margin:20px" height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" />
-<img style="margin:20px" height=96px src="https://seeklogo.com/images/V/vuetify-logo-3BCF73C928-seeklogo.com.png" />
-<img style="margin:20px" height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" />
-<img style="margin:20px" height=96px src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" />
+<img height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" />&nbsp;&nbsp;
+<img height=96px src="https://seeklogo.com/images/V/vuetify-logo-3BCF73C928-seeklogo.com.png" />&nbsp;&nbsp;
+<img height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" />&nbsp;&nbsp;
+<img height=96px src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" />
 </p>
 
 ## Installation
