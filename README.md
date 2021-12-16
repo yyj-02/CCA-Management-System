@@ -1,10 +1,11 @@
-<p align="center"><img width=20% src="https://github.com/yyj-02/CCA-Management-System/blob/main/src/assets/logo.png" /></p>
+<a href="https://cca-management-system.web.app/"><p align="center"><img width=20% src="https://github.com/yyj-02/CCA-Management-System/blob/main/src/assets/logo.png" /></p></a>
 <h1 align="center">CCA Manager</h1>
-<h3 align="center">A one stop solution to managing hall life</h2>
+<h3 align="center">A one stop solution to managing hall life</h3>
 
 # CCA Manager
 
-<p align="center"><img width=70% src="https://github.com/yyj-02/CCA-Management-System/blob/main/src/assets/ccaManagerUI.png" /></p>
+<a href="https://cca-management-system.web.app/"><p align="center"><img width=70% src="https://github.com/yyj-02/CCA-Management-System/blob/main/src/assets/ccaManagerUI.png" /></p></a>
+<h3><a href="https://cca-management-system.web.app/">Link to CCA Manager</a></h3>
 
 ## Project Description
 
