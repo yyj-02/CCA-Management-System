@@ -14,10 +14,10 @@ This project was developed by [Yuvaraj](https://github.com/Yuvaraj0702) and [I](
 ## Tech Stack
 
 <p align="center">
-<img style="margin: auto 40px" height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" />
-<img style="margin: auto 40px" height=96px src="https://seeklogo.com/images/V/vuetify-logo-3BCF73C928-seeklogo.com.png" />
-<img style="margin: auto 40px" height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" />
-<img style="margin: auto 40px" height=96px src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" />
+<img style="margin:20px" height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" />
+<img style="margin:20px" height=96px src="https://seeklogo.com/images/V/vuetify-logo-3BCF73C928-seeklogo.com.png" />
+<img style="margin:20px" height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" />
+<img style="margin:20px" height=96px src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" />
 </p>
 
 ## Installation
