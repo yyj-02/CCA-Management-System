@@ -9,14 +9,14 @@
 
 ## Project Description
 
-This project was developed by [Yuvaraj](https://github.com/Yuvaraj0702) and [I](https://cca-management-system.web.app/) for an [Inter-hall Hackathon](https://nus-inter-hall-hack.devpost.com/project-gallery) hosted in NUS. Managing hall commitments can be tedious as it lacks a unified system to coordinate activities and convey information. Our proposed web app aims to overcome this issue by providing a dashboard for CCA leaders to plan their events and manage their members. With this unified system, hall points counting system can also be efficiently implemented to automate the point counting process. Our app is also both desktop and mobile friendly for users' ease of access.
+This project was developed by [Yuvaraj](https://github.com/Yuvaraj0702) and [Yong Jie](https://cca-management-system.web.app/) for an [Inter-hall Hackathon](https://nus-inter-hall-hack.devpost.com/project-gallery) hosted in NUS. Managing hall commitments can be tedious as it lacks a unified system to coordinate activities and convey information. Our proposed web app aims to overcome this issue by providing a dashboard for CCA leaders to plan their events and manage their members. With this unified system, hall points counting system can also be efficiently implemented to automate the point counting process. Our app is also both desktop and mobile friendly for users' ease of access.
 
 ## Tech Stack
 
 <p align="center">
-<img height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" />&nbsp;&nbsp;
-<img height=96px src="https://seeklogo.com/images/V/vuetify-logo-3BCF73C928-seeklogo.com.png" />&nbsp;&nbsp;
-<img height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" />&nbsp;&nbsp;
+<img height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/95/Vue.js_Logo_2.svg/1184px-Vue.js_Logo_2.svg.png" />&nbsp;&nbsp;&nbsp;&nbsp;
+<img height=96px src="https://seeklogo.com/images/V/vuetify-logo-3BCF73C928-seeklogo.com.png" />&nbsp;&nbsp;&nbsp;&nbsp;
+<img height=96px src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/1200px-Typescript_logo_2020.svg.png" />&nbsp;&nbsp;&nbsp;&nbsp;
 <img height=96px src="https://firebase.google.com/downloads/brand-guidelines/PNG/logo-vertical.png" />
 </p>
 
