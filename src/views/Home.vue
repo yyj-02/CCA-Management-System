@@ -89,8 +89,8 @@ export default Vue.extend({
       membersAttendance: [
         { name: "Yeoh Yong Jie", attended: false },
         { name: "Tom Holland", attended: true },
-        { name: "Toby Maguire", attended: true },
-        { name: "Andrew Garfield", attended: true },
+        { name: "Iron Man", attended: false },
+        { name: "Batman", attended: true },
         { name: "Wait what?", attended: false },
       ],
       attendanceWeek: {
